@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Code, Database, Smartphone, Cloud, CheckCircle2, LayoutDashboard, FolderKanban, Users, Shield, Zap, MessageSquare, ChevronDown } from "lucide-react";
+import { ArrowRight, Code, Database, Smartphone, Cloud, CheckCircle2, LayoutDashboard, FolderKanban, Users, Shield, Zap, MessageSquare, ChevronDown, PhoneCall } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -20,7 +20,7 @@ export default function LandingPage() {
             <nav className="fixed top-0 w-full z-50 glass-nav">
                 <div className="max-w-[1440px] mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-12">
                     <div className="flex items-center gap-3">
-                        <img src="/logo.avif" alt="Softmake Logo" className="h-8 w-auto mix-blend-multiply dark:mix-blend-normal" />
+                        <img src="/logo.avif" alt="Softmake Logo" className="h-8 w-auto mix-blend-multiply dark:mix-blend-screen dark:filter dark:invert dark:opacity-90" />
                     </div>
                     <div className="flex items-center gap-4 sm:gap-8">
                         <Link to="/projects" className="hidden md:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
@@ -75,7 +75,7 @@ export default function LandingPage() {
                     </div>
                 </section>
                 {/* 2.5 About Us Section */}
-                <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+                <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-8xl mx-auto">
                     <div className="flex flex-col lg:flex-row items-center gap-12 sm:gap-20">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -121,8 +121,8 @@ export default function LandingPage() {
                                 <img src="/logo.avif" alt="Softmake Team" className="w-24 h-24 sm:w-32 sm:h-32 object-contain mix-blend-multiply dark:mix-blend-normal mb-auto" />
 
                                 <div className="relative z-10">
-                                    <div className="text-4xl sm:text-5xl font-bold text-foreground mb-2">500+</div>
-                                    <p className="text-muted-foreground font-medium">Projects successfully delivered to engineering students nationwide.</p>
+                                    <div className="text-2xl sm:text-3xl font-bold text-foreground mb-2 leading-tight">Software & Hardware Solutions</div>
+                                    <p className="text-muted-foreground font-medium mt-3 text-sm sm:text-base leading-relaxed">We serve end-to-end academic projects spanning across complex software architectures and physical hardware integrations.</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -159,7 +159,7 @@ export default function LandingPage() {
                 {/* 4. Solution Section */}
                 <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 text-center bg-foreground text-background rounded-md sm:rounded-[40px] mx-4 lg:mx-12 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50"></div>
-                    <div className="relative z-10 max-w-4xl mx-auto space-y-12 sm:space-y-16">
+                    <div className="relative z-10 max-w-8xl mx-auto space-y-12 sm:space-y-16">
                         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight">A Complete Digital Ecosystem <br className="hidden md:block" />For Academic Projects</h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-left">
@@ -239,11 +239,11 @@ export default function LandingPage() {
 
                 {/* 6. Features Grid */}
                 <section id="features" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12">
-                    <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                    <div className="text-center max-w-8xl mx-auto mb-12 sm:mb-16">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">Core Platform Features</h2>
                         <p className="text-muted-foreground text-base sm:text-lg">Designed specifically for the modern student developer.</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-8xl mx-auto">
                         <div className="glass-card rounded-md p-8 sm:p-10 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] group overflow-hidden relative border border-border/50 hover:border-foreground/30 transition-colors">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div className="relative z-10 space-y-4">
@@ -312,7 +312,7 @@ export default function LandingPage() {
                         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Our Capabilities</h2>
                         <p className="text-muted-foreground mt-4">Expertise across all modern technology domains.</p>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-8xl mx-auto">
                         {['AI/ML Projects', 'Full Stack Development', 'Android Apps', 'IoT Projects', 'Cloud Solutions', 'Cybersecurity'].map((service, i) => (
                             <div key={i} className="glass-card rounded-[24px] p-6 sm:p-8 hover:-translate-y-1 transition-transform cursor-pointer group">
                                 <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">{service}</h3>
@@ -323,7 +323,7 @@ export default function LandingPage() {
                 </section>
 
                 {/* 10. Portfolio (Compact Layout) */}
-                <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto">
+                <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-8xl mx-auto">
                     <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-12 sm:mb-16 gap-6 text-center sm:text-left">
                         <div>
                             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Recent Work</h2>
@@ -363,7 +363,7 @@ export default function LandingPage() {
                 {/* 11. Testimonials */}
                 <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-muted/10 border-t border-border">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center mb-12 sm:mb-16">What Students Say</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-8xl mx-auto">
                         {[
                             { name: "Rahul S.", college: "MIT Engineering", text: "The tracking dashboard is incredible. I knew exactly where my backend development stood every single day. Highly professional." },
                             { name: "Priya M.", college: "SRM University", text: "They didn't just write code; the developer explained the architecture so I could present my project with absolute confidence." },
@@ -388,7 +388,7 @@ export default function LandingPage() {
                 {/* 12. Pricing */}
                 <section id="pricing" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-muted/20 border-y border-border">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center mb-12 sm:mb-16">Simple Pricing</h2>
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-8xl mx-auto">
                         <div className="flex-1 w-full glass-card rounded-md p-8 sm:p-10 relative">
                             <h3 className="text-lg sm:text-xl font-medium text-muted-foreground mb-2">Standard</h3>
                             <div className="text-4xl sm:text-5xl font-bold mb-4">Code Only</div>
@@ -419,7 +419,7 @@ export default function LandingPage() {
                 </section>
 
                 {/* 13. FAQ */}
-                <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-3xl mx-auto">
+                <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-8xl mx-auto">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-10 sm:mb-12 text-center">Frequently Asked</h2>
                     <div className="space-y-4">
                         {[
@@ -454,11 +454,11 @@ export default function LandingPage() {
                             <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight">Start Building Your Project With Confidence</h2>
                             <p className="text-lg sm:text-xl text-muted-foreground">Experience the new standard of technical guidance and project execution.</p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <a href="mailto:softmadeitsolutions@gmail.com" className="inline-flex h-12 sm:h-14 items-center justify-center px-8 rounded-full bg-foreground text-background font-medium text-base sm:text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,0,0,0.15)]">
+                                <a href="mailto:info@softmake.in" className="inline-flex h-12 sm:h-14 items-center justify-center px-8 rounded-full bg-foreground text-background font-medium text-base sm:text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,0,0,0.15)]">
                                     Book Consultation
                                 </a>
-                                <a href="mailto:softmadeitsolutions@gmail.com" className="inline-flex h-12 sm:h-14 items-center justify-center px-8 rounded-full border border-border bg-background font-medium text-base sm:text-lg hover:bg-muted transition-colors">
-                                    Contact Support
+                                <a href="tel:7411728250" className="inline-flex h-12 sm:h-14 items-center justify-center px-8 rounded-full border border-foreground/20 bg-background text-foreground font-medium text-base sm:text-lg hover:bg-muted transition-colors">
+                                    <PhoneCall className="w-5 h-5 mr-2" /> Call Now
                                 </a>
                             </div>
                         </div>
@@ -468,44 +468,47 @@ export default function LandingPage() {
             </main>
 
             {/* 16. Footer */}
-            <footer className="border-t border-border bg-muted/10 py-12 sm:py-16 px-4 sm:px-6 lg:px-12">
+            <footer className="border-t border-border bg-foreground text-background py-12 sm:py-16 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-30"></div>
                 <div className="max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 sm:gap-12 mb-12">
                     <div className="space-y-4 md:col-span-1">
                         <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                            <img src="/logo.avif" alt="Softmake Logo" className="h-8 w-auto mix-blend-multiply dark:mix-blend-normal" />
+                            <img src="/logo.avif" alt="Softmake Logo" className="h-8 w-auto filter invert mix-blend-screen opacity-90" />
                         </div>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Transforming academic ideas into production-grade projects. Designed for all tech students.</p>
+                        <p className="text-xs sm:text-sm text-background/70 leading-relaxed">Transforming academic ideas into production-grade projects. Designed for all tech students.</p>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-4 text-sm sm:text-base">Platform</h4>
-                        <ul className="space-y-3 text-xs sm:text-sm text-muted-foreground">
-                            <li><Link to="/login" className="hover:text-foreground transition-colors">Student Portal</Link></li>
-                            <li><Link to="/projects" className="hover:text-foreground transition-colors">Portfolio</Link></li>
-                            <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
+                        <h4 className="font-semibold mb-4 text-sm sm:text-base text-background/90">Platform</h4>
+                        <ul className="space-y-3 text-xs sm:text-sm text-background/60">
+                            <li><Link to="/login" className="hover:text-background transition-colors">Student Portal</Link></li>
+                            <li><Link to="/projects" className="hover:text-background transition-colors">Portfolio</Link></li>
+                            <li><a href="#pricing" className="hover:text-background transition-colors">Pricing</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-4 text-sm sm:text-base">Company</h4>
-                        <ul className="space-y-3 text-xs sm:text-sm text-muted-foreground">
-                            <li><a href="#about" className="hover:text-foreground transition-colors">About Us</a></li>
-                            <li><a href="#services" className="hover:text-foreground transition-colors">Services</a></li>
-                            <li><a href="mailto:softmadeitsolutions@gmail.com" className="hover:text-foreground transition-colors">Contact</a></li>
+                        <h4 className="font-semibold mb-4 text-sm sm:text-base text-background/90">Contact Us</h4>
+                        <ul className="space-y-3 text-xs sm:text-sm text-background/60">
+                            <li><a href="tel:7411728250" className="hover:text-background transition-colors flex items-center gap-2"><PhoneCall className="w-3.5 h-3.5" /> +91 7411728250</a></li>
+                            <li><a href="tel:7483262382" className="hover:text-background transition-colors flex items-center gap-2"><PhoneCall className="w-3.5 h-3.5" /> +91 7483262382</a></li>
+                            <li><a href="mailto:info@softmake.in" className="hover:text-background transition-colors block mt-2">info@softmake.in</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-4 text-sm sm:text-base">Legal</h4>
-                        <ul className="space-y-3 text-xs sm:text-sm text-muted-foreground">
-                            <li><Link to="/terms" target="_blank" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-                            <li><Link to="/terms" target="_blank" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
+                        <h4 className="font-semibold mb-4 text-sm sm:text-base text-background/90">Connect</h4>
+                        <ul className="space-y-3 text-xs sm:text-sm text-background/60">
+                            <li>
+                                <a href="https://www.instagram.com/softmake_social" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-background ">
+                                    @softmake_social
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div className="max-w-[1440px] mx-auto border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-xs text-muted-foreground text-center sm:text-left">
+                <div className="max-w-[1440px] mx-auto border-t border-background/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-xs text-background/50 text-center sm:text-left relative z-10">
                     <p>© 2026 Softmake IT Solutions. All rights reserved.</p>
                     <div className="flex gap-4">
-                        <a href="#" className="hover:text-foreground transition-colors">Twitter</a>
-                        <a href="#" className="hover:text-foreground transition-colors">GitHub</a>
-                        <a href="#" className="hover:text-foreground transition-colors">LinkedIn</a>
+                        <Link to="/terms" className="hover:text-background transition-colors">Privacy Policy</Link>
+                        <Link to="/terms" className="hover:text-background transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </footer>

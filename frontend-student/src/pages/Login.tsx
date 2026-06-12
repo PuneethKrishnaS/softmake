@@ -52,8 +52,8 @@ export default function Login() {
         {/* Abstract Grid Pattern */}
         <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
-        <div className="relative z-10 flex items-center gap-3">
-            <img src="/logo.avif" alt="Softmake Logo" className="h-8 brightness-0 invert" />
+        <div className="relative z-10 flex items-center gap-3 mix-blend-screen">
+            <img src="/logo.avif" alt="Softmake Logo" className="h-8 filter invert opacity-90" />
         </div>
 
         <div className="relative z-10 my-auto">
@@ -100,7 +100,7 @@ export default function Login() {
         
         {/* Mobile Logo */}
         <div className="md:hidden flex items-center justify-center mb-12">
-            <img src="/logo.avif" alt="Softmake Logo" className="h-10 mix-blend-multiply dark:mix-blend-normal" />
+            <img src="/logo.avif" alt="Softmake Logo" className="h-10 mix-blend-multiply dark:mix-blend-screen dark:filter dark:invert dark:opacity-90" />
         </div>
         
         <div className="w-full max-w-sm mx-auto">
@@ -171,7 +171,7 @@ export default function Login() {
 
                 <div className="pt-6 border-t border-border/50 text-center">
                     <p className="text-sm text-muted-foreground">
-                        Don't have an account? <Link to="/" className="text-foreground font-semibold hover:underline decoration-primary underline-offset-4 transition-all">Contact Admin</Link>
+                        Don't have an account? <a href="https://api.whatsapp.com/send?phone=917483262382&text=Hello%20Softmake%20Admin,%20I%20would%20like%20to%20request%20an%20account%20for%20the%20student%20portal." target="_blank" rel="noopener noreferrer" className="text-foreground font-semibold hover:underline decoration-primary underline-offset-4 transition-all">Contact Admin via WhatsApp</a>
                     </p>
                 </div>
             </motion.div>
