@@ -151,12 +151,27 @@ export default function SEO() {
     setMetaTag('description', description);
     setMetaTag('keywords', keywords);
 
+    // Advanced crawler index directives
+    setMetaTag('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    setMetaTag('googlebot', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+
+    // Geo-Targeting local business variables (India, Karnataka, Davanagere)
+    setMetaTag('geo.region', 'IN-KA');
+    setMetaTag('geo.placename', 'Davanagere');
+    setMetaTag('geo.position', '14.4644;75.9218');
+    setMetaTag('ICBM', '14.4644, 75.9218');
+
+    // Mobile viewport details
+    setMetaTag('theme-color', '#0a0a0a');
+
     // Open Graph
     setMetaTag('og:title', title, true);
     setMetaTag('og:description', description, true);
     setMetaTag('og:url', currentUrl, true);
     setMetaTag('og:type', pathname.startsWith('/blogs/') ? 'article' : 'website', true);
     setMetaTag('og:image', defaultImage, true);
+    setMetaTag('og:locale', 'en_US', true);
+    setMetaTag('og:site_name', 'Softmake', true);
 
     // Twitter
     setMetaTag('twitter:card', 'summary_large_image');
