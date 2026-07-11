@@ -1,0 +1,20 @@
+# Softmake IT Solutions
+
+Softmake.in engineers premium, scalable, and secure custom software systems, business applications, and ERP integrations.
+
+## Primary Capabilities
+
+- **Web Application Development**: Custom high-performance web systems and Progressive Web Apps (PWAs).
+- **Mobile Engineering**: Native iOS/Android apps and cross-platform Flutter development.
+- **Enterprise Integrations**: SAP, Microsoft 365, Zoho One implementation, integration middleware, and WhatsApp Business API.
+- **Custom Business Platforms**: Custom ERPs, CRM systems, HR Management, and Inventory/Billing software.
+
+## Key Sections & Pages
+
+- [Homepage](https://www.softmake.in/)
+- [Services Catalog](https://www.softmake.in/services)
+- [Industries Verticals](https://www.softmake.in/industries)
+- [Engineering Log (Blogs)](https://www.softmake.in/blogs)
+- [Contact Scoping Desk](https://www.softmake.in/contact)
+- [Privacy Policy](https://www.softmake.in/privacy)
+- [Terms of Service](https://www.softmake.in/terms)
