@@ -140,7 +140,7 @@ export default function WhatWeServe() {
   const [activeService, setActiveService] = useState(servicesData[0]);
 
   return (
-    <div className="max-w-[1440px] mx-auto px-6 py-24 relative z-10 border-t border-border bg-background">
+    <div className="max-w-[1440px] mx-auto py-12 relative z-10 border-t border-border bg-background">
       <div className="flex flex-col items-center text-center mb-16">
         <span className="text-[10px] md:text-xs font-bold text-primary uppercase tracking-[0.2em] mb-3">What We Serve</span>
         <h2 className="font-sans font-black text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground">

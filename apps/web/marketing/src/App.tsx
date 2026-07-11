@@ -11,6 +11,7 @@ import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import SEO from './components/SEO';
 
 export default function App() {
   const [isServicesHovered, setIsServicesHovered] = useState(false);
@@ -45,6 +46,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <SEO />
       <div className="bg-background text-foreground antialiased min-h-screen flex flex-col justify-between transition-colors duration-200">
         
         {/* Minimal Navigation Header */}

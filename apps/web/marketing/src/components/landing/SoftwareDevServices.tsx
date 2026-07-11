@@ -87,7 +87,7 @@ export default function SoftwareDevServices() {
   const [activeSoftwareService, setActiveSoftwareService] = useState(softwareServices[0]);
 
   return (
-    <div className="max-w-[1440px] mx-auto px-6 py-24 relative z-10 border-t border-border bg-background">
+    <div className="max-w-[1440px] mx-auto py-12 relative z-10 border-t border-border bg-background">
 
       {/* Header Block */}
       <div className="flex flex-col items-center text-center mb-20 max-w-7xl mx-auto">

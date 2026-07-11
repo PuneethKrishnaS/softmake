@@ -39,7 +39,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60 text-border/25" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-6 pb-32 relative z-10">
+      <div className="max-w-[1440px] mx-auto pb-32 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"

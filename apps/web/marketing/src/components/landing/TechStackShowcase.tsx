@@ -108,7 +108,7 @@ export default function TechStackShowcase() {
   const [activeTechCategory, setActiveTechCategory] = useState(techCategories[0]);
 
   return (
-    <div className="max-w-[1440px] mx-auto px-6 py-24 relative z-10 border-t border-border bg-background">
+    <div className="max-w-[1440px] mx-auto py-12 relative z-10 border-t border-border bg-background">
 
       {/* Centered Header */}
       <div className="flex flex-col items-center text-center mb-16 max-w-4xl mx-auto">

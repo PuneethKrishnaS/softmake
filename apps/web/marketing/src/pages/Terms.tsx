@@ -2,7 +2,7 @@ import { Cpu, Scale, HelpCircle } from 'lucide-react';
 
 export default function Terms() {
   return (
-    <div className="py-12 max-w-[800px] mx-auto text-left font-sans">
+    <div className="max-w-[1440px] mx-auto text-left font-sans">
       
       {/* Header Block */}
       <div className="mb-12 border-b border-neutral-100 pb-8">

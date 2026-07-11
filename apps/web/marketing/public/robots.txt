@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.softmake.in
+
+# Sitemaps
+Sitemap: https://www.softmake.in/sitemap.xml

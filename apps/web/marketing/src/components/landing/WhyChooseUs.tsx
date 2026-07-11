@@ -28,7 +28,7 @@ const valuePropositions = [
 
 export default function WhyChooseUs() {
   return (
-    <div className="max-w-[1440px] mx-auto px-6 py-24 relative z-10 border-t border-border bg-background">
+    <div className="max-w-[1440px] mx-auto py-12 relative z-10 border-t border-border bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
         {/* Left Column: Title & Key Stats */}

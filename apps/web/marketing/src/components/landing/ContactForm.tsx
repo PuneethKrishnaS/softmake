@@ -43,7 +43,7 @@ export default function ContactForm({ prefilledMessage }: { prefilledMessage?: s
   };
 
   return (
-    <div className="bg-muted/10 border border-border p-8 sm:p-10 rounded-lg w-full">
+    <div className="bg-muted/10 border border-border p-6 sm:p-10 rounded-lg w-full">
       {submitted ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
