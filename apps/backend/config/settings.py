@@ -138,5 +138,20 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5174",
     "http://localhost:4173",
     "https://student.softmake.in",
+    "https://www.student.softmake.in",
     "https://admin.softmake.in",
+    "https://softmake.in",
+    "https://www.softmake.in",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:4173",
+    "https://student.softmake.in",
+    "https://www.student.softmake.in",
+    "https://admin.softmake.in",
+    "https://softmake.in",
+    "https://www.softmake.in",
+    "https://backend.softmake.in",
 ]
