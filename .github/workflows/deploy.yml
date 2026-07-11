@@ -1,0 +1,23 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Deploy Client Portals (Simulated Vercel)
+      run: |
+        echo "Building static React portals and deploying to Vercel CDN..."
+        # npm install -g vercel
+        # vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+
+    - name: Deploy Backend API (Simulated Docker)
+      run: |
+        echo "Building backend Docker image and deploying to AWS ECS / Render..."
+        # docker build -t softmade-backend ./apps/backend
+        # docker push softmade-backend

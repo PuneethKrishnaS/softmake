@@ -1,0 +1,19 @@
+{
+  "name": "softmade-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/web/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:admin": "npm run dev -w apps/web/admin",
+    "dev:student": "npm run dev -w apps/web/student",
+    "dev:marketing": "npm run dev -w apps/web/marketing",
+    "dev:business": "npm run dev -w apps/web/business",
+    "build:admin": "npm run build -w apps/web/admin",
+    "build:student": "npm run build -w apps/web/student",
+    "build:all": "npm run build --workspaces",
+    "lint:all": "npm run lint --workspaces"
+  }
+}

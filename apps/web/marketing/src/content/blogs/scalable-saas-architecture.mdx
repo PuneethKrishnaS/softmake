@@ -1,0 +1,45 @@
+---
+title: "Building Scalable SaaS Architecture on Modern Cloud"
+date: "July 10, 2026"
+author: "Puneeth Krishna"
+tagline: "Learn the core principles of multi-tenant database isolation, serverless scaling, and API gateways."
+readTime: "5 min read"
+category: "SaaS & Cloud"
+---
+
+# Building Scalable SaaS Architecture on Modern Cloud Platforms
+
+Scaling a software-as-a-service (SaaS) application requires careful planning around ==multi-tenancy==, ==security isolation==, and ==database design==. In this post, we will walk through the core patterns we use at Softmake.in to build highly durable cloud architectures.
+
+## 1. Multi-Tenant Database Strategies
+
+When designing a database for multiple corporate clients, you have three primary architectural patterns:
+
+*   **Database-per-Tenant**: Highest security isolation. Each tenant has a dedicated database instance.
+*   **Schema-per-Tenant**: Tenants share a database instance but have separated database schemas.
+*   **Shared Database & Shared Schema**: Tenants share the same tables, separated by a tenant identifier key (e.g. `tenant_id`).
+
+Here is a typical schema definition for a shared database pattern:
+
+```sql
+CREATE TABLE client_ledgers (
+    id SERIAL PRIMARY KEY,
+    tenant_id VARCHAR(50) NOT NULL,
+    transaction_amount NUMERIC(12, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX idx_tenant ON client_ledgers(tenant_id);
+```
+
+## 2. API Gateway Security
+
+An API gateway serves as the entry point for all client requests. It handles authentication, rate-limiting, and routing.
+
+> [!IMPORTANT]
+> Always enforce SSL encryption and authenticate requests using JWT tokens containing the immutable `tenant_id` claim in the header.
+
+## 3. Dynamic Interactive CTA
+
+To explore how these architectures fit your business model, book a direct consultation with one of our lead cloud architects:
+
+<ContactCTA subject="SaaS Cloud Architecture Consultation" />

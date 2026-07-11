@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: softmade-db
+    environment:
+      POSTGRES_DB: softmade_db
+      POSTGRES_USER: softmade_user
+      POSTGRES_PASSWORD: softmade_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - softmade-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: softmade-cache
+    ports:
+      - "6379:6379"
+    networks:
+      - softmade-net
+
+  backend:
+    build:
+      context: ../../apps/backend
+      dockerfile: Dockerfile
+    container_name: softmade-backend
+    command: daphne -b 0.0.0.0 -p 8000 config.asgi:application
+    volumes:
+      - ../../apps/backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=dev-secret-key-12345
+      - DATABASE_URL=postgresql://softmade_user:softmade_password@postgres:5432/softmade_db
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - softmade-net
+
+  nginx:
+    image: nginx:alpine
+    container_name: softmade-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+    networks:
+      - softmade-net
+
+volumes:
+  pgdata:
+
+networks:
+  softmade-net:
+    driver: bridge

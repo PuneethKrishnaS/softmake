@@ -1,0 +1,55 @@
+---
+title: "Securing API Gateways in Microservice Systems"
+date: "July 11, 2026"
+author: "Puneeth Krishna"
+tagline: "An interactive scoping checklist and guides to securing ingress gateways and microservice traffic."
+readTime: "8 min read"
+category: "Security & APIs"
+---
+
+# Securing API Gateways in Microservice Systems
+
+Protecting internal services from unauthorized access requires securing the ==ingress gateway==. Below, we outline our recommended checklist, interactive deep dives, and practices.
+
+## 1. Security Compliance Checklist
+
+Review this interactive list of configurations required for enterprise security validation:
+
+- [x] Configure SSL/TLS certificates for outer domain addresses.
+- [x] Implement rate limiting rules at the ingress interface.
+- [ ] Establish role-based token scopes on client tokens.
+- [ ] Connect gateway audit logs to a real-time monitor system.
+
+## 2. Interactive Technical Deep Dives
+
+Click below to expand specific architectural guidelines:
+
+<Toggle title="Enforcing Ingress Rate-Limiting Rules">
+Rate-limiting guards internal databases against DDoS strikes and runaway loops:
+```sql
+-- Track API requests per second in cache or database
+CREATE TABLE rate_limits (
+    ip_address VARCHAR(45) PRIMARY KEY,
+    request_count INT DEFAULT 1,
+    window_start TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+</Toggle>
+
+<Toggle title="Role-Based Access Token Scopes">
+Always check claim scopes before executing queries:
+```python
+def verify_admin_scope(jwt_claims):
+    if 'admin' not in jwt_claims.get('scopes', []):
+        raise PermissionError("Missing required write scopes")
+    return True
+```
+</Toggle>
+
+## 3. Best Practices Summary
+
+<Callout emoji="🔑">
+Never store raw API keys or database password credentials inside source code repositories. Always fetch credentials at runtime from a secure environment provider.
+</Callout>
+
+<ContactCTA subject="API Security Implementation Consultation" />
