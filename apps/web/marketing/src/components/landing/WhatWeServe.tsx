@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Mockup PNG assets
-import ipadMockup from '../../assets/screens/Apple iPad Pro 13_ Space Gray - Landscape.png';
-import iphoneMockup from '../../assets/screens/Apple iPhone 11 Pro Max Silver.png';
-import macbookMockup from '../../assets/screens/Apple Macbook Pro Laptop.png';
-import monitorMockup from '../../assets/screens/Dell UltraSharp Monitor.png';
+import DesktopMockup from '../screens/DesktopMockup';
+import LaptopMockup from '../screens/LaptopMockup';
+import TabletMockup from '../screens/TabletMockup';
+import MobileMockup from '../screens/MobileMockup';
 
 const servicesData = [
   {
@@ -23,7 +22,6 @@ const servicesData = [
     techStack: ["React", "TypeScript", "Next.js", "GraphQL", "Tailwind CSS", "Node.js", "PostgreSQL"],
     metric: "99+ Lighthouse Score",
     device: "macbook",
-    mockupImg: macbookMockup,
     screenBg: "from-indigo-500/20 to-blue-500/20"
   },
   {
@@ -41,7 +39,6 @@ const servicesData = [
     techStack: ["Figma", "Adobe CC", "Framer Motion", "GSAP", "Vector Design", "Design Systems"],
     metric: "100% Custom Mockups",
     device: "ipad",
-    mockupImg: ipadMockup,
     screenBg: "from-emerald-500/20 to-teal-500/20"
   },
   {
@@ -59,7 +56,6 @@ const servicesData = [
     techStack: ["Stripe API", "Next.js Commerce", "Shopify headless", "PostgreSQL", "Node.js", "Redis"],
     metric: "40% Increase in Checkout Speed",
     device: "monitor",
-    mockupImg: monitorMockup,
     screenBg: "from-amber-500/20 to-orange-500/20"
   },
   {
@@ -77,7 +73,6 @@ const servicesData = [
     techStack: ["React Native", "Expo", "SQLite", "App Store Connect", "Google Play console"],
     metric: "100% Offline Capability",
     device: "iphone",
-    mockupImg: iphoneMockup,
     screenBg: "from-rose-500/20 to-pink-500/20"
   },
   {
@@ -95,7 +90,6 @@ const servicesData = [
     techStack: ["Tauri", "Electron", "Rust", "C++ bindings", "Windows API", "macOS Cocoa"],
     metric: "Tiny 10MB App Footprint",
     device: "monitor",
-    mockupImg: monitorMockup,
     screenBg: "from-violet-500/20 to-purple-500/20"
   },
   {
@@ -113,7 +107,6 @@ const servicesData = [
     techStack: ["Google Search Console", "Lighthouse", "Schema.org", "PageSpeed APIs", "Next.js Metadata"],
     metric: "Top 3 Organic Search Positions",
     device: "macbook",
-    mockupImg: macbookMockup,
     screenBg: "from-cyan-500/20 to-blue-500/20"
   },
   {
@@ -131,7 +124,6 @@ const servicesData = [
     techStack: ["Meta Business Manager", "LinkedIn Ads", "Google Analytics 4", "GTM Tag Manager"],
     metric: "3.5x ROI on Digital Spend",
     device: "iphone",
-    mockupImg: iphoneMockup,
     screenBg: "from-fuchsia-500/20 to-pink-500/20"
   }
 ];
@@ -237,36 +229,28 @@ export default function WhatWeServe() {
                   switch (activeService.device) {
                     case 'iphone':
                       return (
-                        <img
-                          src={activeService.mockupImg}
-                          alt="iPhone device mockup"
-                          className="w-full h-auto max-w-[170px] drop-shadow-[0_25px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] transition-transform duration-500"
-                        />
+                        <div className="w-full max-w-[200px] hover:scale-[1.02] transition-transform duration-500">
+                          <MobileMockup />
+                        </div>
                       );
                     case 'ipad':
                       return (
-                        <img
-                          src={activeService.mockupImg}
-                          alt="iPad device mockup"
-                          className="w-full h-auto max-w-[340px] drop-shadow-[0_25px_40px_rgba(0,0,0,0.1)] hover:scale-[1.02] transition-transform duration-500"
-                        />
+                        <div className="w-full max-w-[380px] hover:scale-[1.02] transition-transform duration-500">
+                          <TabletMockup />
+                        </div>
                       );
                     case 'macbook':
                       return (
-                        <img
-                          src={activeService.mockupImg}
-                          alt="MacBook Pro device mockup"
-                          className="w-full h-auto max-w-[460px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] hover:scale-[1.02] transition-transform duration-500"
-                        />
+                        <div className="w-full max-w-[500px] hover:scale-[1.02] transition-transform duration-500">
+                          <LaptopMockup />
+                        </div>
                       );
                     case 'monitor':
                     default:
                       return (
-                        <img
-                          src={activeService.mockupImg}
-                          alt="Widescreen monitor device mockup"
-                          className="w-full h-auto max-w-[480px] drop-shadow-[0_25px_45px_rgba(0,0,0,0.1)] hover:scale-[1.02] transition-transform duration-500"
-                        />
+                        <div className="w-full max-w-[520px] hover:scale-[1.02] transition-transform duration-500">
+                          <DesktopMockup />
+                        </div>
                       );
                   }
                 })()}

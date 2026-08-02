@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Cpu, Smartphone, Globe, Layers, Database, Layout, Zap } from 'lucide-react';
-import displayMockups from '../../assets/DisplayMockups.png';
+import HeroMockup from './HeroMockup';
+
 
 const capabilities = [
   { title: "Business Automation", icon: Cpu },
@@ -131,14 +132,9 @@ export default function HeroSection() {
           {/* Centered Mockup */}
           <motion.div
             variants={itemVariants}
-            className="mt-16 w-full max-w-[1320px] px-4 relative group"
+            className="mt-6 w-full max-w-[1000px] px-4 relative group mx-auto"
           >
-            <img
-              src={displayMockups}
-              alt="Softmake.in custom system dashboards mockups"
-              className="w-full h-auto"
-              loading="eager"
-            />
+            <HeroMockup />
           </motion.div>
 
         </motion.div>
