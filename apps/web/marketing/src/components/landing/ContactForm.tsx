@@ -12,6 +12,8 @@ const countries = [
 
 export default function ContactForm({ prefilledMessage }: { prefilledMessage?: string }) {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formFields, setFormFields] = useState({ firstName: '', lastName: '', company: '', email: '', contact: '', message: prefilledMessage || '' });
   const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
@@ -35,10 +37,50 @@ export default function ContactForm({ prefilledMessage }: { prefilledMessage?: s
     };
   }, []);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formFields.firstName && formFields.lastName && formFields.company && formFields.email && formFields.contact) {
-      setSubmitted(true);
+      setIsSubmitting(true);
+      setErrorMessage("");
+
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      
+      if (!accessKey) {
+        setErrorMessage("Web3Forms Access Key is missing. Please add it to your .env file.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New Scoping Request from ${formFields.firstName} ${formFields.lastName} (${formFields.company})`,
+            from_name: `${formFields.firstName} ${formFields.lastName}`,
+            email: formFields.email,
+            company: formFields.company,
+            contact_number: `${selectedCountry.code} ${formFields.contact}`,
+            message: formFields.message || "No specific details provided.",
+          }),
+        });
+
+        const result = await response.json();
+        
+        if (result.success) {
+          setSubmitted(true);
+        } else {
+          setErrorMessage(result.message || "Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        setErrorMessage("Network error occurred. Please check your connection and try again.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -204,13 +246,21 @@ export default function ContactForm({ prefilledMessage }: { prefilledMessage?: s
             />
           </div>
 
+          {/* Error Message */}
+          {errorMessage && (
+            <div className="text-red-500 text-sm font-bold text-center font-mono uppercase tracking-wider">
+              {errorMessage}
+            </div>
+          )}
+
           {/* Submit button */}
           <button
             type="submit"
-            className="w-full bg-primary hover:bg-primary/95 text-primary-foreground border border-primary font-bold py-4 rounded-md transition-all shadow-md text-sm md:text-base uppercase tracking-wider text-center inline-flex items-center justify-center gap-2"
+            disabled={isSubmitting}
+            className="w-full bg-primary hover:bg-primary/95 text-primary-foreground border border-primary font-bold py-4 rounded-md transition-all shadow-md text-sm md:text-base uppercase tracking-wider text-center inline-flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Send Scope Details
-            <ArrowRight size={13} />
+            {isSubmitting ? "Sending..." : "Send Scope Details"}
+            {!isSubmitting && <ArrowRight size={13} />}
           </button>
         </form>
       )}
